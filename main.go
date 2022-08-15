@@ -22,13 +22,10 @@ func init() {
 
 func main() {
 	migrations.Migrate()
-	
-	r := gin.Default()
-	r.MaxMultipartMemory = 8 << 20
 
-	routeHandler := func(r *gin.Engine) *gin.Engine {
+	routesHandler := func(r *gin.Engine) *gin.Engine {
 		return webserver.Routes(r)
 	}
 
-	webserver.RunServer(routeHandler, os.Getenv("APP_PORT"))
+	webserver.RunServer(routesHandler, os.Getenv("APP_PORT"))
 }

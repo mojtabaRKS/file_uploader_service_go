@@ -6,7 +6,10 @@ import (
 )
 
 func Routes(r *gin.Engine) *gin.Engine {
-	r.POST("upload", v1_controller.UploadController)
+	rg := r.RouterGroup.Group("/api/v1")
+	{
+		rg.POST("upload", v1_controller.UploadController)
+	}
 
 	return r
 }
