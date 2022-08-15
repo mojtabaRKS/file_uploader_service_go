@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"file-uploader/webserver"
+	"file-uploader/database/migrations"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -20,6 +21,8 @@ func init() {
 }
 
 func main() {
+	migrations.Migrate()
+	
 	r := gin.Default()
 	r.MaxMultipartMemory = 8 << 20
 

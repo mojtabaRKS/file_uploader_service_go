@@ -26,5 +26,5 @@ func getDsn() string {
 	port := os.Getenv("DATABASE_PORT")
 	charset := "utf8mb4"
 
-	return username + ":" + password + "@tcp(" + host + ":" + port + ")" + db_name + "?charset=" + charset 
+	return username + ":" + password + "@tcp(" + host + ":" + port + ")/" + db_name + "?charset=" + charset 
 }

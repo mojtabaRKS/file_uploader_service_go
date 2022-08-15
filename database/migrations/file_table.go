@@ -11,7 +11,6 @@ type File struct {
 	ID       uint `gorm:"primaryKey"`
 	FileName string
 	Path     string
-	MimeType string
 	Size     uint
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
